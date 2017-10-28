@@ -3,7 +3,11 @@
 // ----CONSTANTS (won't change)
 
 //------- VARIABLES (will change)
-
+int BoostTime = 0;
+int TankTopTemp;
+int TankBotTemp;
+int RoomHumidity;
+int RoomTemp;
 //=======
 
 void setup() {
@@ -23,9 +27,9 @@ void loop() {
                              //   use the same time for all LED flashes to keep them synchronized
  
  readButton();               // call the functions that do the work
- readWebsite();
+ WebServer();
  BoostCountDown();
- ReadTankTemperatures();
+ getTankTemperatures();
  ReadRoomTempHumi();
  updateLedState();
  updateWebPage();
